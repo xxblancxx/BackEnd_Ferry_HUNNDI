@@ -87,3 +87,4 @@ C:\Users\Marti\Documents\Visual Studio 2015\Projects\BackEnd_Ferry_HUNNDI\BackEn
 C:\Users\Marti\Documents\Visual Studio 2015\Projects\BackEnd_Ferry_HUNNDI\BackEnd_Ferry_Hundige\bin\System.Web.Http.Owin.xml
 C:\Users\Marti\Documents\Visual Studio 2015\Projects\BackEnd_Ferry_HUNNDI\BackEnd_Ferry_Hundige\obj\Debug\BackEnd_Ferry_Hundige.dll
 C:\Users\Marti\Documents\Visual Studio 2015\Projects\BackEnd_Ferry_HUNNDI\BackEnd_Ferry_Hundige\obj\Debug\BackEnd_Ferry_Hundige.pdb
+C:\Users\Marti\Documents\Visual Studio 2015\Projects\BackEnd_Ferry_HUNNDI\BackEnd_Ferry_Hundige\obj\Debug\BackEnd_Ferry_Hundige.csprojResolveAssemblyReference.cache
