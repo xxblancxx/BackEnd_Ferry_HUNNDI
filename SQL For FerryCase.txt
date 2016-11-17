@@ -1,0 +1,78 @@
+-- To drop all tables
+-- SELECT 'DROP TABLE [' + SCHEMA_NAME(schema_id) + '].[' + name + ']' FROM sys.tables
+-- Use statement above to get a list of drop queries.
+ -- Might need to run twice given that those with foreign keys will have references in first run.
+
+CREATE TABLE [dbo].[Customer] 
+(
+    [ID] INT NOT NULL PRIMARY KEY, 
+    [IsLocal] BIT DEFAULT ((0)) NOT NULL,
+)
+CREATE TABLE [dbo].[Vehicle] 
+(
+    [ID] INT NOT NULL PRIMARY KEY, 
+    [IsTruck] BIT DEFAULT ((0)) NOT NULL,
+)
+
+CREATE TABLE [dbo].[Ticket]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[RefCustomer] INT NOT NULL, 
+    [ReservationForTicket] INT NOT NULL, 
+    [Transportation] INT NOT NULL, 
+    [Type] INT NOT NULL, 
+    CONSTRAINT [FK_TICKET_CUSTOMER] FOREIGN KEY ([RefCustomer]) REFERENCES [Customer]([ID]), 
+    CONSTRAINT [FK_TICKET_VEHICLE] FOREIGN KEY ([Transportation]) REFERENCES [Vehicle]([ID]), 
+   
+)
+CREATE TABLE [dbo].[Ferry]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[IsReserve] BIT DEFAULT ((0)) NOT NULL,
+	[Name] NVARCHAR(50) NOT NULL,
+	[PeopleCapacity] INT NOT NULL,
+	[VehicleCapacity] INT NOT NULL,
+	[WeightCapacityInKg] INT NOT NULL,
+)
+CREATE TABLE [dbo].[Departure]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[SailingFerry] INT NOT NULL,
+	[DateAndTime] DateTime NOT NULL
+	CONSTRAINT [FK_DEPARTURE_FERRY] FOREIGN KEY ([SailingFerry]) REFERENCES [Ferry]([ID])
+)
+CREATE TABLE [dbo].[Person]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[Name] NVARCHAR(50) NOT NULL,
+	[Email] NVARCHAR(50) NOT NULL
+)
+CREATE TABLE [dbo].[Reservation]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[IsReserve] BIT DEFAULT ((0)) NOT NULL,
+	[RefDeparture] INT NOT NULL,
+	[ReservationNumber] INT NOT NULL,
+	CONSTRAINT [FK_RESERVATION_DEPARTURE] FOREIGN KEY ([RefDeparture]) REFERENCES [Departure]([ID])
+)
+CREATE TABLE [dbo].[Route]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[Destination] NVARCHAR(50) NOT NULL,
+	[Duration] BIGINT NOT NULL,
+	[RefDeparture] INT NOT NULL
+	CONSTRAINT [FK_ROUTE_DEPARTURE] FOREIGN KEY ([RefDeparture]) REFERENCES [Departure]([ID])
+)
+CREATE TABLE [dbo].[Price]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[Amount] FLOAT NOT NULL,
+	[ConnectedRoute] INT NOT NULL
+	CONSTRAINT [FK_PRICE_ROUTE] FOREIGN KEY ([ConnectedRoute]) REFERENCES [Route]([ID])
+)
+CREATE TABLE [dbo].[TicketType]
+(
+	[ID] INT NOT NULL PRIMARY KEY, 
+	[PriceOfTicket] INT NOT NULL
+	CONSTRAINT [FK_TICKETTYPE_PRICE] FOREIGN KEY ([PriceOfTicket]) REFERENCES [Price]([ID])
+)
