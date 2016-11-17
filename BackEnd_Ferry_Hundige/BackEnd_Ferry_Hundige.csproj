@@ -254,13 +254,6 @@
     <Compile Include="Customer.cs" />
     <Compile Include="DBContext.cs" />
     <Compile Include="Departure.cs" />
-    <Compile Include="Dick.aspx.cs">
-      <DependentUpon>Dick.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dick.aspx.designer.cs">
-      <DependentUpon>Dick.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Ferry.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -276,6 +269,13 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Route.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TestPage.aspx.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPage.aspx.designer.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ticket.cs" />
     <Compile Include="TicketType.cs" />
     <Compile Include="Vehicle.cs" />
@@ -284,7 +284,6 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Dick.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -325,6 +324,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="TestPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -11,7 +11,7 @@ namespace BackEnd_Ferry_Hundige
 {
 
 
-    public partial class Dick
+    public partial class TestPage
     {
 
         /// <summary>

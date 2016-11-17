@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dick.aspx.cs" Inherits="BackEnd_Ferry_Hundige.Dick" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TestPage.aspx.cs" Inherits="BackEnd_Ferry_Hundige.TestPage" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <h1 style="font-size:50px;background-color:blueviolet">DICKS!</h1>
+    <h1 style="font-size:50px; background-color:blueviolet">TEST</h1>
     </div>
     </form>
 </body>
