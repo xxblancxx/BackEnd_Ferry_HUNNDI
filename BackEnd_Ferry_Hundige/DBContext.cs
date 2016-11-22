@@ -10,6 +10,7 @@ namespace BackEnd_Ferry_Hundige
         public DBContext()
             : base("name=DBContext")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Customer> Customers { get; set; }
